@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  // Telegram status check ke liye
   if (req.method === 'GET') {
     return res.status(200).send('Bot backend is running!');
   }
@@ -9,7 +10,8 @@ export default async function handler(req, res) {
     if (body && body.inline_query) {
       const inlineQueryId = body.inline_query.id;
       const BOT_TOKEN = "8996872203:AAHitNB0r1J63Tus0CWgUr2SfkFP4nqNI-U";
-      const GAME_URL = "https://bingo-tic-tac-toe.vercel.app";
+      // Aapka exact production URL
+      const GAME_URL = "https://bingo-tic-tac-hwipk6dsm-telegram15.vercel.app";
 
       await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/answerInlineQuery`, {
         method: 'POST',
