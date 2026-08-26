@@ -17,12 +17,12 @@ export default async function handler(req, res) {
           title: '🎮 Play Tic Tac Toe',
           description: 'Click here to send game in group',
           input_message_content: {
-            message_text: '❌ *Tic Tac Toe Game* ○\nClick the button below to start playing:',
+            message_text: '❌ *Tic Tac Toe Game* ○\nClick below to start playing!',
             parse_mode: 'Markdown'
           },
           reply_markup: {
             inline_keyboard: [[
-              { text: '🎮 PLAY GAME', web_app: { url: GAME_URL } }
+              { text: '🎮 PLAY GAME NOW', web_app: { url: GAME_URL } }
             ]]
           }
         }]
@@ -32,4 +32,3 @@ export default async function handler(req, res) {
 
   res.status(200).send('OK');
 }
-
